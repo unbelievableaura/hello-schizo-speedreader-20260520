@@ -149,6 +149,108 @@
         transform: rotate(3deg);
       }
 
+      .strip-4 {
+        right: 4vw;
+        bottom: 5%;
+        color: rgba(5, 5, 5, 0.08);
+        font-size: clamp(18px, 2.8vw, 46px);
+        transform: rotate(-9deg);
+      }
+
+      .strip-5 {
+        left: -6vw;
+        top: 54%;
+        color: rgba(5, 5, 5, 0.09);
+        font-size: clamp(12px, 1.2vw, 20px);
+        transform: rotate(10deg);
+      }
+
+      .messy-copy {
+        position: absolute;
+        z-index: 1;
+        max-width: min(280px, 32vw);
+        color: rgba(5, 5, 5, 0.18);
+        font-size: clamp(13px, 1.55vw, 27px);
+        font-weight: 700;
+        line-height: 0.92;
+        text-transform: uppercase;
+        pointer-events: none;
+      }
+
+      .m1 {
+        left: 4%;
+        top: 9%;
+        transform: rotate(-11deg);
+      }
+
+      .m2 {
+        left: 27%;
+        top: 13%;
+        color: rgba(5, 5, 5, 0.11);
+        font-size: clamp(16px, 2.2vw, 38px);
+        transform: rotate(4deg);
+      }
+
+      .m3 {
+        right: 7%;
+        top: 10%;
+        max-width: 180px;
+        transform: rotate(7deg);
+      }
+
+      .m4 {
+        left: 6%;
+        bottom: 31%;
+        color: rgba(5, 5, 5, 0.15);
+        transform: rotate(6deg);
+      }
+
+      .m5 {
+        right: 6%;
+        bottom: 32%;
+        color: rgba(5, 5, 5, 0.16);
+        font-size: clamp(18px, 2.3vw, 40px);
+        transform: rotate(-4deg);
+      }
+
+      .m6 {
+        left: 36%;
+        bottom: 9%;
+        color: rgba(5, 5, 5, 0.13);
+        transform: rotate(-2deg);
+      }
+
+      .m7 {
+        right: 20%;
+        top: 34%;
+        color: rgba(5, 5, 5, 0.09);
+        font-size: clamp(20px, 3.2vw, 58px);
+        transform: rotate(11deg);
+      }
+
+      .m8 {
+        left: 19%;
+        top: 42%;
+        color: rgba(5, 5, 5, 0.1);
+        font-size: clamp(11px, 1vw, 18px);
+        transform: rotate(-18deg);
+      }
+
+      .m9 {
+        right: 33%;
+        bottom: 24%;
+        color: rgba(5, 5, 5, 0.12);
+        transform: rotate(14deg);
+      }
+
+      .m10 {
+        left: 72%;
+        top: 58%;
+        color: rgba(5, 5, 5, 0.1);
+        font-size: clamp(12px, 1.1vw, 19px);
+        transform: rotate(-13deg);
+      }
+
       .ascii-head {
         position: absolute;
         margin: 0;
@@ -280,50 +382,15 @@
         text-overflow: ellipsis;
       }
 
-      .hold-button {
-        position: absolute;
-        left: 50%;
-        bottom: clamp(64px, 10vh, 112px);
-        min-width: min(360px, calc(100vw - 36px));
-        border: 2px solid var(--ink);
-        border-radius: 0;
-        background: var(--paper);
-        color: var(--ink);
-        padding: 14px 22px 13px;
-        font-family: "Times New Roman", Times, serif;
-        font-size: clamp(22px, 3.4vw, 44px);
-        font-weight: 700;
-        line-height: 0.9;
-        text-align: center;
-        transform: translateX(-50%);
-        box-shadow: 5px 5px 0 var(--ink);
-        cursor: pointer;
-        touch-action: none;
-        user-select: none;
-      }
-
-      .hold-button.active,
-      .hold-button:active {
-        background: var(--ink);
-        color: var(--paper);
-        transform: translate(calc(-50% + 3px), 3px);
-        box-shadow: 2px 2px 0 var(--ink);
-      }
-
-      .hold-button:focus-visible {
-        outline: 2px solid var(--ink);
-        outline-offset: 5px;
-      }
-
       .annotation {
         position: absolute;
         z-index: 2;
         max-width: 240px;
-        border: 1px solid rgba(5, 5, 5, 0.22);
-        background: var(--paper);
-        padding: 7px 9px;
-        color: rgba(5, 5, 5, 0.48);
-        font-size: clamp(11px, 1vw, 15px);
+        border: 0;
+        background: transparent;
+        padding: 0;
+        color: rgba(5, 5, 5, 0.22);
+        font-size: clamp(13px, 1.3vw, 22px);
         font-weight: 700;
         line-height: 0.9;
         text-transform: uppercase;
@@ -332,14 +399,12 @@
       }
 
       .annotation.red {
-        border-color: rgba(5, 5, 5, 0.22);
-        color: rgba(5, 5, 5, 0.48);
+        color: rgba(5, 5, 5, 0.18);
         box-shadow: none;
       }
 
       .annotation.blue {
-        border-color: rgba(5, 5, 5, 0.22);
-        color: rgba(5, 5, 5, 0.48);
+        color: rgba(5, 5, 5, 0.2);
         box-shadow: none;
       }
 
@@ -373,6 +438,32 @@
 
       .flash {
         display: none;
+      }
+
+      .cursor-trail {
+        position: fixed;
+        z-index: 20;
+        color: rgba(5, 5, 5, 0.55);
+        font-size: 8px;
+        font-weight: 700;
+        line-height: 0.85;
+        text-transform: uppercase;
+        white-space: nowrap;
+        pointer-events: none;
+        user-select: none;
+        animation: trailFade 1.1s ease-out forwards;
+      }
+
+      @keyframes trailFade {
+        0% {
+          opacity: 0.95;
+          transform: translate(0, 0) rotate(var(--trail-rotate));
+        }
+
+        100% {
+          opacity: 0;
+          transform: translate(var(--trail-x), var(--trail-y)) rotate(var(--trail-rotate));
+        }
       }
 
       @media (max-width: 760px) {
@@ -436,21 +527,26 @@
           font-size: 11px;
         }
 
-        .hold-button {
-          bottom: 72px;
-          min-width: min(290px, calc(100vw - 34px));
-          padding: 12px 18px 11px;
-          box-shadow: 4px 4px 0 var(--ink);
-        }
-
         .ascii-strip {
           font-size: clamp(12px, 4vw, 17px);
         }
 
         .strip-2,
+        .strip-4,
+        .strip-5,
         .head-2,
-        .head-3 {
+        .head-3,
+        .m2,
+        .m5,
+        .m7,
+        .m9,
+        .m10 {
           display: none;
+        }
+
+        .messy-copy {
+          max-width: 160px;
+          font-size: clamp(10px, 3.7vw, 16px);
         }
 
         .head-1 {
@@ -488,7 +584,19 @@
         <div class="ascii-field" aria-hidden="true">
           <div class="ascii-strip strip-1">HELLO? HELLO? IS THIS NOT INSANE? ARE YOUR EYES WORKING? THIS IS GENNY.</div>
           <div class="ascii-strip strip-2">WEN MOON / PHONE CALCULATOR / SIX WALLETS / CHART DOING CAR ALARM THINGS</div>
-          <div class="ascii-strip strip-3">CLICK AND HOLD TO CONTINUE THE FINANCIAL EVENT OF HUMAN CIVILIZATION</div>
+          <div class="ascii-strip strip-3">MOVE YOUR MOUSE AND THE COPYPASTA LEAKS OUT IN TINY LETTERS</div>
+          <div class="ascii-strip strip-4">THIS IS DIFFERENT / THIS IS GENNY / THIS MUST GO</div>
+          <div class="ascii-strip strip-5">THE WHITEPAPER WAS A SCREENSHOT OF A TELEGRAM MESSAGE THAT JUST SAID WEN MOON</div>
+          <div class="messy-copy m1">IS THIS NOT INSANE?</div>
+          <div class="messy-copy m2">Are you SEEING this right now?</div>
+          <div class="messy-copy m3">THIS IS GENNY.</div>
+          <div class="messy-copy m4">Are your EYES working?</div>
+          <div class="messy-copy m5">The chart is currently talking in car alarm.</div>
+          <div class="messy-copy m6">Phone calculator math checks out.</div>
+          <div class="messy-copy m7">SURELY THIS MUST GO.</div>
+          <div class="messy-copy m8">47 people cannot be wrong.</div>
+          <div class="messy-copy m9">WAGMI for the forty-third time.</div>
+          <div class="messy-copy m10">Dog with a hat thesis.</div>
           <pre class="ascii-head head-1">      .---------.
     .'  _     _  '.
    /   / \___/ \   \
@@ -517,12 +625,11 @@
         <div class="annotation a1 red" id="noteA">phone calculator verified</div>
         <div class="annotation a2 blue" id="noteB">47 people cannot be wrong</div>
         <div class="annotation a3" id="noteC">day ninety-one has left the chat</div>
-        <div class="annotation a4 red" id="noteD">not financial advice, just destiny</div>
+        <div class="annotation a4 red" id="noteD">not financial advice just destiny</div>
         <div class="reader-shell">
-          <div class="reader-meta">230 WPM / ONE WORD PER STOP / HOLD TO READ</div>
+          <div class="reader-meta">230 WPM / ONE WORD PER STOP / AUTOPLAY</div>
           <div class="stream" id="stream" aria-live="polite"></div>
-          <button class="hold-button" id="holdButton" type="button" aria-label="Hold to advance the speed reader" aria-pressed="false">CLICK HERE</button>
-          <div class="sentence" id="sentence">WORD 001 / 657 - HOLD THE BUTTON</div>
+          <div class="sentence" id="sentence">WORD 001 / 657 - AUTOPLAY</div>
         </div>
       </section>
 
@@ -539,7 +646,6 @@
 
       const stream = document.getElementById("stream");
       const sentence = document.getElementById("sentence");
-      const holdButton = document.getElementById("holdButton");
       const noteA = document.getElementById("noteA");
       const noteB = document.getElementById("noteB");
       const noteC = document.getElementById("noteC");
@@ -558,11 +664,13 @@
         maxWords: 1,
         minWords: 1,
         wpm: AVERAGE_WPM,
-        stepDelay: STEP_DELAY
+        stepDelay: STEP_DELAY,
+        autoplay: true
       };
       let wordIndex = 0;
-      let holding = false;
-      let holdTimer = 0;
+      let readerTimer = 0;
+      let trailWordIndex = 0;
+      let lastTrailAt = 0;
 
       function escapeHtml(value) {
         return value
@@ -606,8 +714,7 @@
 
       function renderStatus() {
         const progress = String(wordIndex + 1).padStart(3, "0");
-        const verb = holding ? "READING WHILE HELD" : "HOLD THE BUTTON";
-        sentence.textContent = `WORD ${progress} / ${words.length} - ${AVERAGE_WPM} WPM - ${verb}`;
+        sentence.textContent = `WORD ${progress} / ${words.length} - ${AVERAGE_WPM} WPM - AUTOPLAY`;
       }
 
       function render() {
@@ -621,49 +728,31 @@
         render();
       }
 
-      function startHold(event) {
-        if (event) event.preventDefault();
-        if (holding) return;
-
-        holding = true;
-        holdButton.classList.add("active");
-        holdButton.setAttribute("aria-pressed", "true");
-        advance();
-        holdTimer = window.setInterval(advance, STEP_DELAY);
+      function startAutoplay() {
+        window.clearInterval(readerTimer);
+        readerTimer = window.setInterval(advance, STEP_DELAY);
       }
 
-      function stopHold() {
-        if (!holding) return;
+      function spawnTrail(event) {
+        const now = performance.now();
+        if (now - lastTrailAt < 34) return;
+        lastTrailAt = now;
 
-        holding = false;
-        window.clearInterval(holdTimer);
-        holdButton.classList.remove("active");
-        holdButton.setAttribute("aria-pressed", "false");
-        renderStatus();
+        const fragmentSize = 2 + Math.floor(Math.random() * 4);
+        const fragment = words.slice(trailWordIndex, trailWordIndex + fragmentSize).join(" ");
+        trailWordIndex = (trailWordIndex + fragmentSize) % words.length;
+
+        const trail = document.createElement("span");
+        trail.className = "cursor-trail";
+        trail.textContent = fragment || "HELLO?";
+        trail.style.left = `${event.clientX + 9}px`;
+        trail.style.top = `${event.clientY + 7}px`;
+        trail.style.setProperty("--trail-rotate", `${-24 + Math.random() * 48}deg`);
+        trail.style.setProperty("--trail-x", `${-18 + Math.random() * 36}px`);
+        trail.style.setProperty("--trail-y", `${-34 - Math.random() * 46}px`);
+        document.body.appendChild(trail);
+        window.setTimeout(() => trail.remove(), 1200);
       }
-
-      holdButton.addEventListener("pointerdown", (event) => {
-        if (holdButton.setPointerCapture) holdButton.setPointerCapture(event.pointerId);
-        startHold(event);
-      });
-      holdButton.addEventListener("pointerup", stopHold);
-      holdButton.addEventListener("pointercancel", stopHold);
-      holdButton.addEventListener("lostpointercapture", stopHold);
-      holdButton.addEventListener("click", (event) => event.preventDefault());
-      window.addEventListener("pointerup", stopHold);
-
-      holdButton.addEventListener("keydown", (event) => {
-        if ((event.code === "Space" || event.code === "Enter") && !event.repeat) {
-          startHold(event);
-        }
-      });
-
-      holdButton.addEventListener("keyup", (event) => {
-        if (event.code === "Space" || event.code === "Enter") {
-          event.preventDefault();
-          stopHold();
-        }
-      });
 
       document.addEventListener("keydown", (event) => {
         if (event.key === "ArrowRight") {
@@ -679,14 +768,15 @@
 
         if (event.key === "Escape") {
           wordIndex = 0;
-          stopHold();
           render();
         }
       });
 
+      window.addEventListener("pointermove", spawnTrail);
       window.addEventListener("resize", render);
 
       render();
+      startAutoplay();
     </script>
   </body>
 </html>

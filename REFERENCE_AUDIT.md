@@ -28,7 +28,14 @@ Latest adjustment:
 Hold-to-read adjustment:
 
 - The center reader is back to strict RSVP behavior: exactly one word per stop.
-- The reader does not autoplay. It advances only while `CLICK HERE` is held down.
+- The previous pass used a held `CLICK HERE` button; that control was replaced by autoplay in the next pass.
 - The cadence is 230 WPM, a normal average silent-reading pace instead of a hyper-fast meme cadence.
 - The active word is centered and forced onto one line; long words shrink to fit the viewport.
 - The filled white-page direction uses ASCII heads and low-contrast copy fragments inspired by the supplied reference image instead of a bitmap dependency.
+
+Autoplay mess adjustment:
+
+- The `CLICK HERE` button was removed.
+- The one-word RSVP reader now autoplays at 230 WPM.
+- Background box styling was removed from the note scraps, and additional uneven low-contrast copy fragments fill the 100vh white page.
+- Pointer movement now emits tiny copypasta text fragments from the cursor and fades them out.

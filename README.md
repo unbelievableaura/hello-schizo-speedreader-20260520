@@ -14,7 +14,7 @@ Behavior:
 - The page starts on `HELLO?` and advances through the full copypasta.
 - The header is a Times New Roman `HELLO?` logo with `Pump.fun`, `Dexscreener`, and `Community`.
 - The center reader shows exactly one word per stop.
-- `CLICK HERE` advances the reader only while the button is being held.
-- The hold cadence is set to 230 WPM, inside normal average silent-reading speed.
+- The reader autoplays at 230 WPM, inside normal average silent-reading speed.
 - Left and right arrow keys step one word at a time for manual checking.
-- The white 100vh canvas is filled with low-contrast ASCII heads and copypasta fragments.
+- The white 100vh canvas is filled with low-contrast ASCII heads and uneven copypasta fragments.
+- Moving the mouse emits tiny copypasta fragments from the cursor.
