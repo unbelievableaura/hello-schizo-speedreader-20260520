@@ -402,8 +402,8 @@
       <section class="controls" aria-label="Reader controls">
         <button id="playButton" type="button">PAUSE</button>
         <label class="speed">
-          <span class="label" id="speedLabel">760 WPM</span>
-          <input id="speed" type="range" min="240" max="1400" step="20" value="760" aria-label="Words per minute" />
+          <span class="label" id="speedLabel">280 WPM</span>
+          <input id="speed" type="range" min="120" max="900" step="10" value="280" aria-label="Words per minute" />
         </label>
         <button id="resetButton" type="button">RESET</button>
         <div class="counter" id="counter">1 / 657</div>
@@ -482,8 +482,8 @@
 
       function delayForWord(value) {
         const wpm = Number(speed.value);
-        const punctuation = /[.!?]$/.test(value) ? 1.55 : /[,;:]$/.test(value) ? 1.15 : 1;
-        const longWord = value.length > 13 ? 1.16 : 1;
+        const punctuation = /[.!?]$/.test(value) ? 2.25 : /[,;:]$/.test(value) ? 1.45 : 1;
+        const longWord = value.length > 13 ? 1.28 : 1;
         return (60000 / wpm) * punctuation * longWord;
       }
 
