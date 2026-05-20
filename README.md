@@ -16,5 +16,11 @@ Behavior:
 - The center reader shows exactly one word per stop.
 - The reader autoplays at 230 WPM, inside normal average silent-reading speed.
 - Left and right arrow keys step one word at a time for manual checking.
-- The white 100vh canvas is filled with low-contrast ASCII heads and uneven copypasta fragments.
-- Moving the mouse emits tiny copypasta fragments from the cursor.
+- The white 100vh canvas is filled with generated floating chud-head PNGs and uneven fragments pulled only from the copypasta.
+- Moving the mouse emits tiny literal copypasta fragments from the cursor.
+
+Generated image assets:
+
+- `assets/chud-heads-source.png` is the original Imagegen output on chroma-key green.
+- `assets/chud-heads.png` is the transparent keyed sheet.
+- `assets/chud-head-1.png`, `assets/chud-head-2.png`, and `assets/chud-head-3.png` are the floating page assets.

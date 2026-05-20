@@ -11,7 +11,7 @@ Initial application:
 - Typography is Times New Roman.
 - Decoration is intentionally minimal and low-contrast.
 - The full copypasta is still loaded and played from `HELLO?` through `Disgusting.`
-- Controls are limited to play/pause, speed, reset, and progress.
+- Controls were later removed from the header in favor of autoplay and keyboard-only stepping.
 
 Current adjustment:
 
@@ -39,3 +39,8 @@ Autoplay mess adjustment:
 - The one-word RSVP reader now autoplays at 230 WPM.
 - Background box styling was removed from the note scraps, and additional uneven low-contrast copy fragments fill the 100vh white page.
 - Pointer movement now emits tiny copypasta text fragments from the cursor and fades them out.
+
+Generated-head adjustment:
+
+- Decorative background copy now uses exact copypasta fragments only.
+- The placeholder ASCII heads were replaced by Imagegen-created transparent chud-head PNGs placed around the white page.

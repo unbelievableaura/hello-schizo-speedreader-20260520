@@ -127,7 +127,6 @@
         font-size: clamp(14px, 1.65vw, 28px);
         font-weight: 700;
         line-height: 0.92;
-        text-transform: uppercase;
         white-space: nowrap;
       }
 
@@ -165,6 +164,30 @@
         transform: rotate(10deg);
       }
 
+      .strip-6 {
+        left: 16vw;
+        top: 83%;
+        color: rgba(5, 5, 5, 0.075);
+        font-size: clamp(20px, 3.4vw, 56px);
+        transform: rotate(-5deg);
+      }
+
+      .strip-7 {
+        right: -10vw;
+        top: 66%;
+        color: rgba(5, 5, 5, 0.08);
+        font-size: clamp(13px, 1.5vw, 26px);
+        transform: rotate(8deg);
+      }
+
+      .strip-8 {
+        left: -9vw;
+        top: 72%;
+        color: rgba(5, 5, 5, 0.07);
+        font-size: clamp(14px, 1.6vw, 30px);
+        transform: rotate(-12deg);
+      }
+
       .messy-copy {
         position: absolute;
         z-index: 1;
@@ -173,7 +196,6 @@
         font-size: clamp(13px, 1.55vw, 27px);
         font-weight: 700;
         line-height: 0.92;
-        text-transform: uppercase;
         pointer-events: none;
       }
 
@@ -251,38 +273,141 @@
         transform: rotate(-13deg);
       }
 
-      .ascii-head {
-        position: absolute;
-        margin: 0;
-        color: rgba(5, 5, 5, 0.2);
-        font-family: "Courier New", Courier, monospace;
-        font-size: clamp(9px, 1vw, 15px);
-        font-weight: 700;
-        line-height: 0.82;
-        white-space: pre;
-        animation: floatHead 8s ease-in-out infinite;
+      .m11 {
+        left: 48%;
+        top: 8%;
+        color: rgba(5, 5, 5, 0.11);
+        font-size: clamp(11px, 1.05vw, 18px);
+        transform: rotate(-9deg);
       }
 
-      .head-1 {
-        left: clamp(12px, 5vw, 72px);
-        top: 30%;
+      .m12 {
+        right: 2%;
+        top: 43%;
+        color: rgba(5, 5, 5, 0.14);
+        max-width: min(330px, 30vw);
+        transform: rotate(8deg);
+      }
+
+      .m13 {
+        left: 2%;
+        top: 59%;
+        color: rgba(5, 5, 5, 0.1);
+        font-size: clamp(11px, 1vw, 17px);
+        transform: rotate(-3deg);
+      }
+
+      .m14 {
+        left: 58%;
+        top: 23%;
+        color: rgba(5, 5, 5, 0.12);
+        max-width: min(250px, 26vw);
+        transform: rotate(-15deg);
+      }
+
+      .m15 {
+        left: 13%;
+        top: 24%;
+        color: rgba(5, 5, 5, 0.12);
+        font-size: clamp(16px, 2.5vw, 42px);
+        transform: rotate(13deg);
+      }
+
+      .m16 {
+        right: 13%;
+        bottom: 8%;
+        color: rgba(5, 5, 5, 0.12);
+        max-width: min(300px, 28vw);
+        transform: rotate(4deg);
+      }
+
+      .m17 {
+        left: 24%;
+        bottom: 29%;
+        color: rgba(5, 5, 5, 0.08);
+        font-size: clamp(14px, 1.9vw, 30px);
         transform: rotate(-6deg);
       }
 
-      .head-2 {
+      .m18 {
+        right: 38%;
+        top: 50%;
+        color: rgba(5, 5, 5, 0.09);
+        font-size: clamp(12px, 1.2vw, 20px);
+        transform: rotate(16deg);
+      }
+
+      .m19 {
+        left: 41%;
+        bottom: 18%;
+        color: rgba(5, 5, 5, 0.11);
+        font-size: clamp(13px, 1.4vw, 23px);
+        transform: rotate(7deg);
+      }
+
+      .m20 {
+        right: 3%;
+        top: 18%;
+        color: rgba(5, 5, 5, 0.1);
+        font-size: clamp(11px, 1vw, 18px);
+        transform: rotate(-7deg);
+      }
+
+      .float-head {
+        position: absolute;
+        z-index: 1;
+        width: clamp(96px, 13vw, 224px);
+        height: auto;
+        opacity: 0.2;
+        filter: grayscale(1) contrast(1.18);
+        mix-blend-mode: multiply;
+        pointer-events: none;
+        user-select: none;
+        animation: floatHead 8s ease-in-out infinite;
+      }
+
+      .head-art-1 {
+        left: clamp(12px, 5vw, 72px);
+        top: 34%;
+        width: clamp(118px, 16vw, 250px);
+        opacity: 0.24;
+        transform: rotate(-7deg);
+      }
+
+      .head-art-2 {
         right: clamp(10px, 6vw, 92px);
-        top: 48%;
-        color: rgba(5, 5, 5, 0.16);
-        transform: rotate(5deg) scale(0.86);
+        top: 38%;
+        width: clamp(102px, 14vw, 220px);
+        opacity: 0.2;
+        transform: rotate(6deg);
         animation-delay: -2.2s;
       }
 
-      .head-3 {
-        left: 37%;
-        bottom: 7%;
-        color: rgba(5, 5, 5, 0.1);
-        transform: rotate(2deg) scale(0.74);
+      .head-art-3 {
+        left: 52%;
+        bottom: 5%;
+        width: clamp(86px, 11vw, 180px);
+        opacity: 0.15;
+        transform: rotate(2deg);
         animation-delay: -4.5s;
+      }
+
+      .head-art-4 {
+        left: 78%;
+        top: 6%;
+        width: clamp(72px, 8vw, 128px);
+        opacity: 0.13;
+        transform: rotate(-12deg);
+        animation-delay: -6s;
+      }
+
+      .head-art-5 {
+        left: 23%;
+        bottom: 5%;
+        width: clamp(76px, 9vw, 144px);
+        opacity: 0.12;
+        transform: rotate(10deg);
+        animation-delay: -3.5s;
       }
 
       @keyframes floatHead {
@@ -393,7 +518,6 @@
         font-size: clamp(13px, 1.3vw, 22px);
         font-weight: 700;
         line-height: 0.9;
-        text-transform: uppercase;
         box-shadow: none;
         pointer-events: none;
       }
@@ -447,7 +571,6 @@
         font-size: 8px;
         font-weight: 700;
         line-height: 0.85;
-        text-transform: uppercase;
         white-space: nowrap;
         pointer-events: none;
         user-select: none;
@@ -534,13 +657,25 @@
         .strip-2,
         .strip-4,
         .strip-5,
-        .head-2,
-        .head-3,
+        .strip-6,
+        .strip-7,
+        .strip-8,
+        .head-art-3,
+        .head-art-4,
+        .head-art-5,
         .m2,
         .m5,
         .m7,
         .m9,
-        .m10 {
+        .m10,
+        .m11,
+        .m12,
+        .m14,
+        .m16,
+        .m17,
+        .m18,
+        .m19,
+        .m20 {
           display: none;
         }
 
@@ -549,11 +684,18 @@
           font-size: clamp(10px, 3.7vw, 16px);
         }
 
-        .head-1 {
+        .head-art-1 {
           left: 8px;
-          top: 37%;
-          font-size: 8px;
+          top: 39%;
+          width: 118px;
           opacity: 0.65;
+        }
+
+        .head-art-2 {
+          right: -12px;
+          top: 62%;
+          width: 96px;
+          opacity: 0.34;
         }
       }
 
@@ -582,50 +724,44 @@
 
       <section class="stage" id="community" aria-label="Speed-reading text stage">
         <div class="ascii-field" aria-hidden="true">
-          <div class="ascii-strip strip-1">HELLO? HELLO? IS THIS NOT INSANE? ARE YOUR EYES WORKING? THIS IS GENNY.</div>
-          <div class="ascii-strip strip-2">WEN MOON / PHONE CALCULATOR / SIX WALLETS / CHART DOING CAR ALARM THINGS</div>
-          <div class="ascii-strip strip-3">MOVE YOUR MOUSE AND THE COPYPASTA LEAKS OUT IN TINY LETTERS</div>
-          <div class="ascii-strip strip-4">THIS IS DIFFERENT / THIS IS GENNY / THIS MUST GO</div>
-          <div class="ascii-strip strip-5">THE WHITEPAPER WAS A SCREENSHOT OF A TELEGRAM MESSAGE THAT JUST SAID WEN MOON</div>
+          <div class="ascii-strip strip-1">HELLO? IS THIS NOT INSANE? Are you SEEING this right now? Are your EYES working?</div>
+          <div class="ascii-strip strip-2">The total supply? Quadrillions. The utility? The whitepaper?</div>
+          <div class="ascii-strip strip-3">A screenshot of a Telegram message that just says "wen moon 🚀." TEXTBOOK.</div>
+          <div class="ascii-strip strip-4">THIS IS DIFFERENT. This project is different.</div>
+          <div class="ascii-strip strip-5">SURELY THIS /goal MUST GO. I mean — SURELY. SURELY THIS MUST GO.</div>
+          <div class="ascii-strip strip-6">The chart? VERTICAL. Completely, aggressively, almost offensively vertical.</div>
+          <div class="ascii-strip strip-7">This isn't gambling. This is vision. Warren Buffett invests in things he understands.</div>
+          <div class="ascii-strip strip-8">That you wanted to "do more research"? Disgusting.</div>
           <div class="messy-copy m1">IS THIS NOT INSANE?</div>
           <div class="messy-copy m2">Are you SEEING this right now?</div>
           <div class="messy-copy m3">THIS IS GENNY.</div>
           <div class="messy-copy m4">Are your EYES working?</div>
-          <div class="messy-copy m5">The chart is currently talking in car alarm.</div>
-          <div class="messy-copy m6">Phone calculator math checks out.</div>
+          <div class="messy-copy m5">The chart is currently talking in a language that sounds like a car alarm</div>
+          <div class="messy-copy m6">The math is right there. I did it on my phone's calculator app. It checks out.</div>
           <div class="messy-copy m7">SURELY THIS MUST GO.</div>
-          <div class="messy-copy m8">47 people cannot be wrong.</div>
-          <div class="messy-copy m9">WAGMI for the forty-third time.</div>
-          <div class="messy-copy m10">Dog with a hat thesis.</div>
-          <pre class="ascii-head head-1">      .---------.
-    .'  _     _  '.
-   /   / \___/ \   \
-  |   |  [___]  |   |
-  |   |  o   o  |   |
-  |   |    &gt;    |   |
-  |   |  .---.  |   |
-   \   \ '---' /   /
-    '._  '---'  _.'
-       '-.___.-'</pre>
-          <pre class="ascii-head head-2">    _________
-  /  _____  \
- /  / ___ \  \
- | | |___| | |
- | |  O O  | |
- | |   &gt;   | |
- | |  ===  | |
- \  \_____/  /
-  '---------'</pre>
-          <pre class="ascii-head head-3"> .-HELLO?-.
- /  [] []  \
- |    &gt;    |
- |  _____  |
-  \_______/</pre>
+          <div class="messy-copy m8">There are 47 people in the Telegram</div>
+          <div class="messy-copy m9">"WAGMI" for the forty-third time this hour.</div>
+          <div class="messy-copy m10">I am investing in a dog with a hat that I also understand.</div>
+          <div class="messy-copy m11">Because mine are barely functioning</div>
+          <div class="messy-copy m12">It is going to make us all millionaires by Thursday.</div>
+          <div class="messy-copy m13">This is genuinely, certifiably, no-questions-asked</div>
+          <div class="messy-copy m14">Do you understand the NARRATIVE here?</div>
+          <div class="messy-copy m15">Absolutely TEXTBOOK fundamentals.</div>
+          <div class="messy-copy m16">Elon once tweeted the word "woof" in 2021.</div>
+          <div class="messy-copy m17">The contract was deployed forty minutes ago.</div>
+          <div class="messy-copy m18">The liquidity? Locked.</div>
+          <div class="messy-copy m19">The community? Brother, I cannot even BEGIN</div>
+          <div class="messy-copy m20">Buy now. Or don't.</div>
+          <img class="float-head head-art-1" src="assets/chud-head-1.png" alt="" decoding="async" />
+          <img class="float-head head-art-2" src="assets/chud-head-3.png" alt="" decoding="async" />
+          <img class="float-head head-art-3" src="assets/chud-head-2.png" alt="" decoding="async" />
+          <img class="float-head head-art-4" src="assets/chud-head-1.png" alt="" decoding="async" />
+          <img class="float-head head-art-5" src="assets/chud-head-3.png" alt="" decoding="async" />
         </div>
-        <div class="annotation a1 red" id="noteA">phone calculator verified</div>
-        <div class="annotation a2 blue" id="noteB">47 people cannot be wrong</div>
-        <div class="annotation a3" id="noteC">day ninety-one has left the chat</div>
-        <div class="annotation a4 red" id="noteD">not financial advice just destiny</div>
+        <div class="annotation a1 red" id="noteA">The math is right there.</div>
+        <div class="annotation a2 blue" id="noteB">There are 47 people in the Telegram</div>
+        <div class="annotation a3" id="noteC">For ninety days.</div>
+        <div class="annotation a4 red" id="noteD">This isn't gambling. This is vision.</div>
         <div class="reader-shell">
           <div class="reader-meta">230 WPM / ONE WORD PER STOP / AUTOPLAY</div>
           <div class="stream" id="stream" aria-live="polite"></div>
@@ -652,11 +788,11 @@
       const noteD = document.getElementById("noteD");
 
       const notes = [
-        ["phone calculator verified", "47 people cannot be wrong", "day ninety-one has left the chat", "not financial advice, just destiny"],
-        ["whitepaper: wen moon", "developer timezone: unknown", "six wallets. perfect decentralization.", "crypto wizard says normal"],
-        ["dog with hat thesis", "yacht-island math checks out", "mercury stopped rugging", "analysis = green candles only"],
-        ["humility = no linkedin", "car alarm price discovery", "textbook because I said textbook", "emotionally cannot be wrong"],
-        ["buffett has not found dog yet", "grandchildren will ask", "printer-paper logo confirmed", "this is different, probably"]
+        ["The math is right there.", "There are 47 people in the Telegram", "For ninety days.", "This isn't gambling. This is vision."],
+        ['A screenshot of a Telegram message that just says "wen moon 🚀."', "A developer in a timezone nobody can identify", "There are six wallets.", "this is normal price discovery."],
+        ["I am investing in a dog with a hat that I also understand.", "purchase a yacht", "Mercury is no longer in retrograde.", "green candles"],
+        ["No names, no faces, no LinkedIn profiles", "The chart? VERTICAL.", "Absolutely TEXTBOOK fundamentals.", "I cannot emotionally afford to be wrong."],
+        ["he hasn't discovered this particular dog yet", "your grandchildren ask you where you were", "a piece of printer paper.", "This project is different."]
       ];
 
       window.__readerStats = {
