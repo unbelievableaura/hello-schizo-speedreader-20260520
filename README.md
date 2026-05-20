@@ -13,7 +13,8 @@ Behavior:
 
 - The page starts on `HELLO?` and advances through the full copypasta.
 - The header is a Times New Roman `HELLO?` logo with `Pump.fun`, `Dexscreener`, and `Community`.
-- The center text advances in sentence-aware chunks of 1-3 words.
-- Short loud sentences hit faster; longer rambling sentences hold slightly longer.
-- Click the page or press Space to pause/resume.
-- Left and right arrow keys step chunk-by-chunk while paused.
+- The center reader shows exactly one word per stop.
+- `CLICK HERE` advances the reader only while the button is being held.
+- The hold cadence is set to 230 WPM, inside normal average silent-reading speed.
+- Left and right arrow keys step one word at a time for manual checking.
+- The white 100vh canvas is filled with low-contrast ASCII heads and copypasta fragments.

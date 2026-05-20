@@ -23,4 +23,12 @@ Latest adjustment:
 
 - The visible header no longer contains reader controls.
 - Header content is `HELLO?` as a Times New Roman logo plus `Pump.fun`, `Dexscreener`, and `Community`.
-- The center dispatch can show 1-3 words at a time, with chunk size and cadence derived from the current sentence tone.
+- The previous 1-3 word sentence-tone dispatch was replaced by the stricter hold-to-read pass below.
+
+Hold-to-read adjustment:
+
+- The center reader is back to strict RSVP behavior: exactly one word per stop.
+- The reader does not autoplay. It advances only while `CLICK HERE` is held down.
+- The cadence is 230 WPM, a normal average silent-reading pace instead of a hyper-fast meme cadence.
+- The active word is centered and forced onto one line; long words shrink to fit the viewport.
+- The filled white-page direction uses ASCII heads and low-contrast copy fragments inspired by the supplied reference image instead of a bitmap dependency.
