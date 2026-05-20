@@ -757,6 +757,7 @@
       const words = source.match(/\S+/g) || [];
       const AVERAGE_WPM = 230;
       const STEP_DELAY = Math.round(60000 / AVERAGE_WPM);
+      const INITIAL_HOLD_MS = 5000;
 
       const stream = document.getElementById("stream");
       const noteA = document.getElementById("noteA");
@@ -777,10 +778,12 @@
         maxWords: 1,
         minWords: 1,
         wpm: AVERAGE_WPM,
-        stepDelay: STEP_DELAY
+        stepDelay: STEP_DELAY,
+        initialHoldMs: INITIAL_HOLD_MS
       };
       let wordIndex = 0;
       let readerTimer = 0;
+      let initialHoldTimer = 0;
       let trailWordIndex = 0;
       let lastTrailAt = 0;
       let lastMousePoint = null;
@@ -836,8 +839,12 @@
       }
 
       function startPlayback() {
+        window.clearTimeout(initialHoldTimer);
         window.clearInterval(readerTimer);
-        readerTimer = window.setInterval(advance, STEP_DELAY);
+        initialHoldTimer = window.setTimeout(() => {
+          advance();
+          readerTimer = window.setInterval(advance, STEP_DELAY);
+        }, INITIAL_HOLD_MS);
       }
 
       function createTrailWord(x, y, dx, dy, index) {
@@ -905,6 +912,7 @@
         if (event.key === "Escape") {
           wordIndex = 0;
           render();
+          startPlayback();
         }
       });
 

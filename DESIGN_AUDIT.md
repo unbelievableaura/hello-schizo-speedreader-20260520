@@ -4,6 +4,7 @@
 
 - Keep the site pure white and Times New Roman, with `HELLO?` as the literal brand signal.
 - Use a strict RSVP reader in the center: one word, fixed position, no animation on the main word.
+- Hold the opening `HELLO?` for five seconds before playback begins.
 - Advance the reader automatically without an on-page control button or visible status label.
 - Fill the 100vh page with generated floating stern heads inspired by the supplied reference image, plus uneven exact copypasta fragments around the reader.
 - Emit readable individual copypasta words from the cursor on pointer movement.
@@ -12,6 +13,7 @@
 ## Audit
 
 - Main reader: one active `.token` is rendered at a time from the copypasta word list.
+- Opening hold: `INITIAL_HOLD_MS` keeps the first word on screen before the interval starts.
 - Speed: `STEP_DELAY` is calculated from the average-reading cadence constant.
 - Interaction: the reader advances on its own; arrow-key stepping remains supported for manual checking.
 - Cursor effect: pointer movement creates larger, darker individual fading words and removes them after animation.

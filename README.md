@@ -12,6 +12,7 @@ Preview images from verification:
 Behavior:
 
 - The page starts on `HELLO?` and advances through the full copypasta.
+- The opening `HELLO?` stays on screen for five seconds before the reader begins.
 - The header is a Times New Roman `HELLO?` logo with `Pump.fun`, `Dexscreener`, and `Community`.
 - The center reader shows exactly one word at a time.
 - The reader advances on its own at a calmer average-reading pace.

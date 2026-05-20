@@ -49,3 +49,7 @@ Cursor-and-label adjustment:
 
 - The visible timing/status labels were removed from the page.
 - The cursor trail now emits one readable word at a time along the mouse path.
+
+Opening hold adjustment:
+
+- The initial `HELLO?` now stays on screen for five seconds before the reader advances.
