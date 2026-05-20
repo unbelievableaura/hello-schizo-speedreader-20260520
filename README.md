@@ -13,11 +13,11 @@ Behavior:
 
 - The page starts on `HELLO?` and advances through the full copypasta.
 - The header is a Times New Roman `HELLO?` logo with `Pump.fun`, `Dexscreener`, and `Community`.
-- The center reader shows exactly one word per stop.
-- The reader autoplays at 230 WPM, inside normal average silent-reading speed.
+- The center reader shows exactly one word at a time.
+- The reader advances on its own at a calmer average-reading pace.
 - Left and right arrow keys step one word at a time for manual checking.
 - The white 100vh canvas is filled with generated floating chud-head PNGs and uneven fragments pulled only from the copypasta.
-- Moving the mouse emits tiny literal copypasta fragments from the cursor.
+- Moving the mouse leaves a word-by-word copypasta wake behind the cursor.
 
 Generated image assets:
 

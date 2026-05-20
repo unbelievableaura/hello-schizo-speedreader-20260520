@@ -11,7 +11,7 @@ Initial application:
 - Typography is Times New Roman.
 - Decoration is intentionally minimal and low-contrast.
 - The full copypasta is still loaded and played from `HELLO?` through `Disgusting.`
-- Controls were later removed from the header in favor of autoplay and keyboard-only stepping.
+- Controls were later removed from the header in favor of automatic playback and keyboard-only stepping.
 
 Current adjustment:
 
@@ -27,20 +27,25 @@ Latest adjustment:
 
 Hold-to-read adjustment:
 
-- The center reader is back to strict RSVP behavior: exactly one word per stop.
-- The previous pass used a held `CLICK HERE` button; that control was replaced by autoplay in the next pass.
-- The cadence is 230 WPM, a normal average silent-reading pace instead of a hyper-fast meme cadence.
+- The center reader is back to strict RSVP behavior: exactly one word at a time.
+- The previous pass used a held `CLICK HERE` button; that control was replaced by automatic playback in the next pass.
+- The cadence is a normal average silent-reading pace instead of a hyper-fast meme cadence.
 - The active word is centered and forced onto one line; long words shrink to fit the viewport.
 - The filled white-page direction uses ASCII heads and low-contrast copy fragments inspired by the supplied reference image instead of a bitmap dependency.
 
-Autoplay mess adjustment:
+Automatic playback mess adjustment:
 
 - The `CLICK HERE` button was removed.
-- The one-word RSVP reader now autoplays at 230 WPM.
+- The one-word RSVP reader now advances on its own.
 - Background box styling was removed from the note scraps, and additional uneven low-contrast copy fragments fill the 100vh white page.
-- Pointer movement now emits tiny copypasta text fragments from the cursor and fades them out.
+- Pointer movement now emits tiny copypasta words from the cursor and fades them out.
 
 Generated-head adjustment:
 
 - Decorative background copy now uses exact copypasta fragments only.
 - The placeholder ASCII heads were replaced by Imagegen-created transparent chud-head PNGs placed around the white page.
+
+Cursor-and-label adjustment:
+
+- The visible timing/status labels were removed from the page.
+- The cursor trail now emits one word at a time along the mouse path.
