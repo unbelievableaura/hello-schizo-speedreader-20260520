@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HELLO? White Speed Reader</title>
+    <title>HELLO? White Schizo Dispatch</title>
     <style>
       :root {
         --paper: #ffffff;
@@ -133,7 +133,7 @@
         position: relative;
         width: 100%;
         max-width: 100vw;
-        height: clamp(160px, 32vh, 300px);
+        height: clamp(170px, 30vh, 280px);
         overflow: hidden;
         white-space: nowrap;
       }
@@ -191,14 +191,13 @@
       .token.active {
         max-width: 88vw;
         color: var(--ink);
-        font-size: clamp(82px, 18vw, 250px);
-        text-shadow: 0 8px 0 rgba(5, 5, 5, 0.08);
+        font-size: clamp(72px, 14vw, 190px);
+        text-shadow: none;
         transform: translate(-50%, -50%);
-        animation: twitch 120ms steps(2, end) 1;
       }
 
       .token.active.long {
-        font-size: clamp(54px, 11vw, 150px);
+        font-size: clamp(44px, 8vw, 112px);
         max-width: 92vw;
         white-space: normal;
         overflow-wrap: anywhere;
@@ -207,10 +206,10 @@
       .sentence {
         position: absolute;
         left: 50%;
-        bottom: clamp(30px, 7vh, 64px);
+        bottom: clamp(34px, 8vh, 74px);
         width: min(760px, calc(100vw - 24px));
-        color: rgba(5, 5, 5, 0.38);
-        font-size: clamp(14px, 1.7vw, 25px);
+        color: rgba(5, 5, 5, 0.55);
+        font-size: clamp(17px, 2.1vw, 31px);
         font-weight: 700;
         line-height: 1;
         text-align: center;
@@ -277,43 +276,7 @@
       }
 
       .flash {
-        position: fixed;
-        inset: 0;
-        z-index: 1;
-        pointer-events: none;
-        opacity: 0;
-        background: #f2f2f2;
-        mix-blend-mode: multiply;
-      }
-
-      .flash.on {
-        animation: flash 90ms steps(2, end) 1;
-      }
-
-      @keyframes twitch {
-        0%,
-        100% {
-          transform: translate(-50%, -50%) skewX(0deg);
-        }
-
-        40% {
-          transform: translate(calc(-50% - 6px), -50%) skewX(-4deg);
-        }
-
-        70% {
-          transform: translate(calc(-50% + 5px), -50%) skewX(3deg);
-        }
-      }
-
-      @keyframes flash {
-        0%,
-        100% {
-          opacity: 0;
-        }
-
-        50% {
-          opacity: 0.28;
-        }
+        display: none;
       }
 
       @media (max-width: 760px) {
@@ -354,11 +317,11 @@
 
         .token.active {
           max-width: 92vw;
-          font-size: clamp(64px, 23vw, 126px);
+          font-size: clamp(58px, 18vw, 104px);
         }
 
         .token.active.long {
-          font-size: clamp(42px, 15vw, 78px);
+          font-size: clamp(34px, 11vw, 62px);
         }
 
         .annotation {
@@ -396,14 +359,14 @@
     </style>
   </head>
   <body>
-    <main class="experience" aria-label="HELLO? white Times New Roman speed reader">
+    <main class="experience" aria-label="HELLO? white Times New Roman schizo dispatch">
       <div class="flash" id="flash"></div>
 
       <section class="controls" aria-label="Reader controls">
         <button id="playButton" type="button">PAUSE</button>
         <label class="speed">
-          <span class="label" id="speedLabel">280 WPM</span>
-          <input id="speed" type="range" min="120" max="900" step="10" value="280" aria-label="Words per minute" />
+          <span class="label" id="speedLabel">dispatch: 1.4s</span>
+          <input id="speed" type="range" min="700" max="2400" step="100" value="1400" aria-label="Dispatch interval" />
         </label>
         <button id="resetButton" type="button">RESET</button>
         <div class="counter" id="counter">1 / 657</div>
@@ -476,15 +439,11 @@
         return sentenceRanges.find((range) => wordIndex >= range.start && wordIndex <= range.end) || sentenceRanges[0];
       }
 
-      function isLoud(value) {
-        return /[A-Z]{4,}|[?!]|GENNY|SURELY|TEXTBOOK|VERTICAL|WAGMI|CHART|Disgusting/.test(value);
-      }
-
       function delayForWord(value) {
-        const wpm = Number(speed.value);
-        const punctuation = /[.!?]$/.test(value) ? 2.25 : /[,;:]$/.test(value) ? 1.45 : 1;
-        const longWord = value.length > 13 ? 1.28 : 1;
-        return (60000 / wpm) * punctuation * longWord;
+        const base = Number(speed.value);
+        const punctuation = /[.!?]$/.test(value) ? 1.75 : /[,;:]$/.test(value) ? 1.28 : 1;
+        const longWord = value.length > 13 ? 1.22 : 1;
+        return base * punctuation * longWord;
       }
 
       function renderStream() {
@@ -525,13 +484,7 @@
         renderNotes();
         sentence.textContent = sentenceForWord(index).text;
         counter.textContent = `${index + 1} / ${words.length}`;
-        speedLabel.textContent = `${speed.value} WPM`;
-
-        if (isLoud(value)) {
-          flash.classList.remove("on");
-          void flash.offsetWidth;
-          flash.classList.add("on");
-        }
+        speedLabel.textContent = `dispatch: ${(Number(speed.value) / 1000).toFixed(1)}s`;
       }
 
       function next() {
@@ -583,7 +536,7 @@
       resetButton.addEventListener("click", reset);
 
       speed.addEventListener("input", () => {
-        speedLabel.textContent = `${speed.value} WPM`;
+        speedLabel.textContent = `dispatch: ${(Number(speed.value) / 1000).toFixed(1)}s`;
         if (playing) {
           window.clearTimeout(timer);
           timer = window.setTimeout(next, delayForWord(words[index] || ""));
