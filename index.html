@@ -83,23 +83,41 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        gap: clamp(12px, 3vw, 38px);
+        gap: clamp(10px, 2.2vw, 30px);
         min-width: 0;
       }
 
       .nav a {
-        color: var(--ink);
-        font-size: clamp(15px, 1.8vw, 24px);
-        font-weight: 700;
-        line-height: 1;
+        position: relative;
+        color: rgba(5, 5, 5, 0.82);
+        font-size: clamp(12px, 1.05vw, 16px);
+        font-style: italic;
+        font-weight: 400;
+        line-height: 1.05;
         text-decoration: none;
         white-space: nowrap;
       }
 
+      .nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -5px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0;
+        transform: scaleX(0.35);
+        transition: opacity 180ms ease, transform 180ms ease;
+      }
+
       .nav a:hover {
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 4px;
+        color: var(--ink);
+      }
+
+      .nav a:hover::after {
+        opacity: 0.55;
+        transform: scaleX(1);
       }
 
       .stage {
@@ -587,11 +605,11 @@
           flex-wrap: wrap;
           width: 100%;
           row-gap: 7px;
-          column-gap: 18px;
+          column-gap: 15px;
         }
 
         .nav a {
-          font-size: clamp(14px, 4vw, 16px);
+          font-size: clamp(12px, 3.3vw, 14px);
         }
 
         .token {
