@@ -48,4 +48,4 @@ Generated-head adjustment:
 Cursor-and-label adjustment:
 
 - The visible timing/status labels were removed from the page.
-- The cursor trail now emits one word at a time along the mouse path.
+- The cursor trail now emits one readable word at a time along the mouse path.

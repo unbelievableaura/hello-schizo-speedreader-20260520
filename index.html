@@ -536,34 +536,41 @@
       .cursor-trail {
         position: fixed;
         z-index: 20;
-        color: rgba(5, 5, 5, 0.64);
-        font-size: 9.2px;
+        color: rgba(5, 5, 5, 0.84);
+        font-size: clamp(14px, 1.35vw, 21px);
         font-weight: 700;
-        line-height: 0.85;
+        line-height: 1;
         white-space: nowrap;
         pointer-events: none;
         user-select: none;
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.95), 0 1px 0 rgba(255, 255, 255, 0.75);
         transform-origin: 50% 50%;
-        animation: wordWake 1.05s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        animation: wordWake 1.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
 
       @keyframes wordWake {
         0% {
           opacity: 0;
-          filter: blur(1.4px);
-          transform: translate(-50%, -50%) translate(0, 0) scale(0.72) rotate(var(--trail-rotate));
+          filter: blur(0.5px);
+          transform: translate(-50%, -50%) translate(0, 0) scale(0.92) rotate(var(--trail-rotate));
         }
 
-        14% {
-          opacity: 0.92;
+        10% {
+          opacity: 0.98;
           filter: blur(0);
-          transform: translate(-50%, -50%) translate(calc(var(--trail-x) * 0.18), calc(var(--trail-y) * 0.18)) scale(1) rotate(var(--trail-rotate));
+          transform: translate(-50%, -50%) translate(calc(var(--trail-x) * 0.12), calc(var(--trail-y) * 0.12)) scale(1) rotate(var(--trail-rotate));
+        }
+
+        70% {
+          opacity: 0.9;
+          filter: blur(0);
+          transform: translate(-50%, -50%) translate(calc(var(--trail-x) * 0.72), calc(var(--trail-y) * 0.72)) scale(0.98) rotate(var(--trail-rotate));
         }
 
         100% {
           opacity: 0;
-          filter: blur(0.2px);
-          transform: translate(-50%, -50%) translate(var(--trail-x), var(--trail-y)) scale(0.82) rotate(var(--trail-rotate));
+          filter: blur(0);
+          transform: translate(-50%, -50%) translate(var(--trail-x), var(--trail-y)) scale(0.94) rotate(var(--trail-rotate));
         }
       }
 
@@ -651,6 +658,10 @@
         .messy-copy {
           max-width: 160px;
           font-size: clamp(10px, 3.7vw, 16px);
+        }
+
+        .cursor-trail {
+          font-size: 14px;
         }
 
         .head-art-1 {
@@ -835,21 +846,21 @@
         const distance = Math.hypot(dx, dy) || 1;
         const ux = dx / distance;
         const uy = dy / distance;
-        const side = -10 + Math.random() * 20;
-        const back = 20 + Math.min(distance, 80) * 0.42 + index * 3 + Math.random() * 18;
+        const side = -16 + Math.random() * 32;
+        const back = 18 + Math.min(distance, 90) * 0.28 + index * 4 + Math.random() * 10;
         const driftX = -ux * back - uy * side;
         const driftY = -uy * back + ux * side;
         const trail = document.createElement("span");
 
         trail.className = "cursor-trail";
         trail.textContent = word;
-        trail.style.left = `${x + driftX * 0.12}px`;
-        trail.style.top = `${y + driftY * 0.12}px`;
-        trail.style.setProperty("--trail-rotate", `${-10 + Math.random() * 20}deg`);
+        trail.style.left = `${x}px`;
+        trail.style.top = `${y}px`;
+        trail.style.setProperty("--trail-rotate", `${-6 + Math.random() * 12}deg`);
         trail.style.setProperty("--trail-x", `${driftX}px`);
         trail.style.setProperty("--trail-y", `${driftY}px`);
         document.body.appendChild(trail);
-        window.setTimeout(() => trail.remove(), 1100);
+        window.setTimeout(() => trail.remove(), 1700);
       }
 
       function spawnTrail(event) {
@@ -867,9 +878,9 @@
         const dy = current.y - lastMousePoint.y;
         const distance = Math.hypot(dx, dy);
 
-        if (now - lastTrailAt < 18 && distance < 10) return;
+        if (now - lastTrailAt < 24 && distance < 16) return;
 
-        const steps = Math.min(5, Math.max(1, Math.floor(distance / 18)));
+        const steps = Math.min(4, Math.max(1, Math.floor(distance / 30)));
         for (let step = 1; step <= steps; step += 1) {
           const t = step / steps;
           createTrailWord(lastMousePoint.x + dx * t, lastMousePoint.y + dy * t, dx, dy, step);

@@ -17,7 +17,7 @@ Behavior:
 - The reader advances on its own at a calmer average-reading pace.
 - Left and right arrow keys step one word at a time for manual checking.
 - The white 100vh canvas is filled with generated floating chud-head PNGs and uneven fragments pulled only from the copypasta.
-- Moving the mouse leaves a word-by-word copypasta wake behind the cursor.
+- Moving the mouse leaves a readable word-by-word copypasta wake behind the cursor.
 
 Generated image assets:
 
