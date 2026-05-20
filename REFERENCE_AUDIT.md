@@ -18,3 +18,9 @@ Current adjustment:
 - The page is now less training-tool and more white schizo dispatch.
 - The center text still changes through the copypasta, but the main word no longer twitches, flashes, or uses color animation.
 - The timing control is a dispatch interval, not a WPM training control.
+
+Latest adjustment:
+
+- The visible header no longer contains reader controls.
+- Header content is `HELLO?` as a Times New Roman logo plus `Pump.fun`, `Dexscreener`, and `Community`.
+- The center dispatch can show 1-3 words at a time, with chunk size and cadence derived from the current sentence tone.

@@ -9,11 +9,11 @@ Preview images from verification:
 - `preview-desktop.png`
 - `preview-mobile.png`
 
-Controls:
+Behavior:
 
 - The page starts on `HELLO?` and advances through the full copypasta.
-- `PLAY` / `PAUSE` starts and stops the dispatch.
-- The range control adjusts the dispatch interval from 0.7s to 2.4s.
-- `RESET` returns to the first word: `HELLO?`.
-- Space toggles play/pause.
-- Left and right arrow keys step word-by-word while paused.
+- The header is a Times New Roman `HELLO?` logo with `Pump.fun`, `Dexscreener`, and `Community`.
+- The center text advances in sentence-aware chunks of 1-3 words.
+- Short loud sentences hit faster; longer rambling sentences hold slightly longer.
+- Click the page or press Space to pause/resume.
+- Left and right arrow keys step chunk-by-chunk while paused.

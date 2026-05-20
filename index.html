@@ -33,35 +33,6 @@
         letter-spacing: 0;
       }
 
-      button,
-      input {
-        font: inherit;
-      }
-
-      button {
-        min-height: 36px;
-        border: 1px solid var(--ink);
-        border-radius: 0;
-        background: var(--paper);
-        color: var(--ink);
-        cursor: pointer;
-        box-shadow: 3px 3px 0 var(--ink);
-      }
-
-      button:hover {
-        background: #f4f4f4;
-      }
-
-      button:active {
-        transform: translate(2px, 2px);
-        box-shadow: 1px 1px 0 var(--ink);
-      }
-
-      input[type="range"] {
-        width: 100%;
-        accent-color: var(--ink);
-      }
-
       .experience {
         position: relative;
         display: grid;
@@ -89,36 +60,46 @@
         pointer-events: none;
       }
 
-      .controls {
-        display: grid;
-        grid-template-columns: 86px minmax(150px, 1fr) 80px auto;
-        gap: 12px;
+      .site-header {
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        padding: 12px clamp(12px, 2.7vw, 36px);
+        gap: 18px;
+        padding: 12px clamp(14px, 3vw, 40px);
         border-bottom: 1px solid rgba(5, 5, 5, 0.16);
         background: var(--paper);
       }
 
-      .speed {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 10px;
-        align-items: center;
-        min-width: 0;
-      }
-
-      .label,
-      .counter,
-      .note {
-        font-size: clamp(13px, 1.2vw, 18px);
-        line-height: 1;
-        text-transform: uppercase;
+      .logo {
+        color: var(--ink);
+        font-size: clamp(28px, 4vw, 58px);
+        font-weight: 700;
+        line-height: 0.86;
+        text-decoration: none;
         white-space: nowrap;
       }
 
-      .counter {
-        border: 1px solid var(--ink);
-        padding: 9px 10px;
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: clamp(12px, 3vw, 38px);
+        min-width: 0;
+      }
+
+      .nav a {
+        color: var(--ink);
+        font-size: clamp(15px, 1.8vw, 24px);
+        font-weight: 700;
+        line-height: 1;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .nav a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
       }
 
       .stage {
@@ -133,9 +114,8 @@
         position: relative;
         width: 100%;
         max-width: 100vw;
-        height: clamp(170px, 30vh, 280px);
+        height: clamp(190px, 32vh, 300px);
         overflow: hidden;
-        white-space: nowrap;
       }
 
       .token {
@@ -155,52 +135,30 @@
         display: none;
       }
 
-      .o-neg3 {
-        left: -8%;
-      }
-
-      .o-neg2 {
-        left: 9%;
-      }
-
-      .o-neg1 {
-        left: 25%;
-      }
-
       .o-0 {
         left: 50%;
-      }
-
-      .o-pos1 {
-        left: 75%;
-      }
-
-      .o-pos2 {
-        left: 92%;
-      }
-
-      .o-pos3 {
-        left: 108%;
-      }
-
-      .token.near {
-        color: rgba(5, 5, 5, 0.48);
-        font-size: clamp(30px, 5.8vw, 96px);
       }
 
       .token.active {
         max-width: 88vw;
         color: var(--ink);
-        font-size: clamp(72px, 14vw, 190px);
+        font-size: clamp(64px, 12vw, 168px);
         text-shadow: none;
         transform: translate(-50%, -50%);
+        white-space: normal;
+        overflow-wrap: normal;
+        word-break: normal;
       }
 
       .token.active.long {
-        font-size: clamp(44px, 8vw, 112px);
+        font-size: clamp(42px, 7.4vw, 102px);
         max-width: 92vw;
-        white-space: normal;
         overflow-wrap: anywhere;
+      }
+
+      .token.active.phrase {
+        font-size: clamp(44px, 8.5vw, 118px);
+        line-height: 0.9;
       }
 
       .sentence {
@@ -280,30 +238,23 @@
       }
 
       @media (max-width: 760px) {
-        .controls {
-          grid-template-columns: 1fr 1fr;
-          gap: 10px;
+        .site-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+          padding: 12px 14px;
         }
 
-        #playButton {
-          grid-column: 1;
-          grid-row: 1;
+        .nav {
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          width: 100%;
+          row-gap: 7px;
+          column-gap: 18px;
         }
 
-        #resetButton {
-          grid-column: 2;
-          grid-row: 1;
-        }
-
-        .speed {
-          grid-column: 1 / -1;
-          grid-row: 2;
-        }
-
-        .counter {
-          grid-column: 1 / -1;
-          grid-row: 3;
-          width: max-content;
+        .nav a {
+          font-size: clamp(14px, 4vw, 16px);
         }
 
         .token {
@@ -311,17 +262,17 @@
           font-size: clamp(18px, 7vw, 42px);
         }
 
-        .token.near {
-          font-size: clamp(22px, 8vw, 50px);
-        }
-
         .token.active {
           max-width: 92vw;
-          font-size: clamp(58px, 18vw, 104px);
+          font-size: clamp(42px, 12vw, 68px);
         }
 
         .token.active.long {
-          font-size: clamp(34px, 11vw, 62px);
+          font-size: clamp(28px, 8vw, 42px);
+        }
+
+        .token.active.phrase {
+          font-size: clamp(30px, 9vw, 48px);
         }
 
         .annotation {
@@ -362,15 +313,14 @@
     <main class="experience" aria-label="HELLO? white Times New Roman schizo dispatch">
       <div class="flash" id="flash"></div>
 
-      <section class="controls" aria-label="Reader controls">
-        <button id="playButton" type="button">PAUSE</button>
-        <label class="speed">
-          <span class="label" id="speedLabel">dispatch: 1.4s</span>
-          <input id="speed" type="range" min="700" max="2400" step="100" value="1400" aria-label="Dispatch interval" />
-        </label>
-        <button id="resetButton" type="button">RESET</button>
-        <div class="counter" id="counter">1 / 657</div>
-      </section>
+      <header class="site-header" aria-label="Site header">
+        <a class="logo" href="/" aria-label="HELLO? home">HELLO?</a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="https://pump.fun" target="_blank" rel="noreferrer">Pump.fun</a>
+          <a href="https://dexscreener.com" target="_blank" rel="noreferrer">Dexscreener</a>
+          <a href="#community">Community</a>
+        </nav>
+      </header>
 
       <section class="stage" aria-label="Speed-reading text stage">
         <div class="annotation a1 red" id="noteA">phone calculator verified</div>
@@ -381,9 +331,6 @@
         <div class="sentence" id="sentence">HELLO?</div>
       </section>
 
-      <div class="ticker" aria-hidden="true">
-        <span id="tickerA"></span><span id="tickerB"></span>
-      </div>
     </main>
 
     <template id="copy-source">HELLO? IS THIS NOT INSANE? Are you SEEING this right now? Are your EYES working? Because mine are barely functioning after witnessing what is quite possibly the most universe-altering financial event in the history of human civilization. It is going to make us all millionaires by Thursday. THIS IS GENNY. This is genuinely, certifiably, no-questions-asked, call-your-mother-and-tell-her-you-love-her GENNY. I have been in this space for eleven months and I have never — never — seen a tokenomic structure this immaculate. The total supply? Quadrillions. The utility? The whitepaper? A screenshot of a Telegram message that just says "wen moon 🚀." TEXTBOOK. Absolutely TEXTBOOK fundamentals. Do you understand the NARRATIVE here? Do you understand what is HAPPENING? Elon once tweeted the word "woof" in 2021. A developer in a timezone nobody can identify has connected those dots with the precision of a Swiss watchmaker and the vision of a Renaissance painter. The contract was deployed forty minutes ago. There are six wallets. One of them is almost certainly the developer. THIS IS THE PERFECT TIME FOR THIS NARRATIVE. The stars have aligned. Mercury is no longer in retrograde. My horoscope said "financial opportunity approaches" and I think we all know what that means. The chart? VERTICAL. Completely, aggressively, almost offensively vertical. It went up 4,000% in the last hour and then dropped 80% and then went back up 6,000% and I am choosing to look exclusively at the green candles because that is called analysis. The liquidity? Locked. For ninety days. Which means in ninety days it gets unlocked but we don't talk about that because THIS IS DIFFERENT. This project is different. I can feel it in a way that transcends reason and basic financial literacy. The community? Brother, I cannot even BEGIN to describe the community. There are 47 people in the Telegram and they are the most PASSIONATE, most CONVICTED, most FINANCIALLY RECKLESS group of individuals ever assembled under one cartoon dog banner. Someone just posted a picture of their dog wearing the logo printed on a piece of printer paper. A child has drawn fan art. An anonymous account with a Pepe profile picture just said "WAGMI" for the forty-third time this hour. This is what a movement looks like in its INFANCY. And the developers? They're anonymous, obviously, because that's how you know they're serious. No names, no faces, no LinkedIn profiles, no verifiable human existence whatsoever — and THAT is called humility. They let the CHART do the talking. The chart is currently talking in a language that sounds like a car alarm but I have been assured by someone whose username is "CryptoWizard999" that this is normal price discovery. SURELY THIS /goal MUST GO. I mean — SURELY. SURELY THIS MUST GO. Look at the macro environment. Look at the sentiment. Look at the fact that I have already told fourteen people in my life about this and I cannot emotionally afford to be wrong. The market cap is four hundred thousand dollars which means if it gets to even ONE PERCENT of Bitcoin's market cap I will be able to retire, purchase a yacht, and also possibly buy a small Mediterranean island. The math is right there. I did it on my phone's calculator app. It checks out. This isn't gambling. This is vision. Warren Buffett invests in things he understands. I am investing in a dog with a hat that I also understand. We are the SAME. The only difference is he hasn't discovered this particular dog yet, and when he does — oh, when he does — we are all going to feel very vindicated standing on our yacht-island. Buy now. Or don't. But when this dog with a hat is on the front page of every financial newspaper in the world and your grandchildren ask you where you were when history was made, what are you going to tell them? That you wanted to "do more research"? Disgusting.</template>
@@ -404,12 +351,6 @@
 
       const stream = document.getElementById("stream");
       const sentence = document.getElementById("sentence");
-      const playButton = document.getElementById("playButton");
-      const resetButton = document.getElementById("resetButton");
-      const speed = document.getElementById("speed");
-      const speedLabel = document.getElementById("speedLabel");
-      const counter = document.getElementById("counter");
-      const flash = document.getElementById("flash");
       const noteA = document.getElementById("noteA");
       const noteB = document.getElementById("noteB");
       const noteC = document.getElementById("noteC");
@@ -423,7 +364,13 @@
         ["buffett has not found dog yet", "grandchildren will ask", "printer-paper logo confirmed", "this is different, probably"]
       ];
 
-      let index = 0;
+      const chunks = buildChunks();
+      window.__chunkStats = {
+        count: chunks.length,
+        maxWords: Math.max(...chunks.map((chunk) => chunk.text.trim().split(/\s+/).length)),
+        minWords: Math.min(...chunks.map((chunk) => chunk.text.trim().split(/\s+/).length))
+      };
+      let chunkIndex = 0;
       let playing = true;
       let timer = 0;
 
@@ -439,39 +386,62 @@
         return sentenceRanges.find((range) => wordIndex >= range.start && wordIndex <= range.end) || sentenceRanges[0];
       }
 
-      function delayForWord(value) {
-        const base = Number(speed.value);
-        const punctuation = /[.!?]$/.test(value) ? 1.75 : /[,;:]$/.test(value) ? 1.28 : 1;
-        const longWord = value.length > 13 ? 1.22 : 1;
-        return base * punctuation * longWord;
+      function sentenceTone(text) {
+        if (/[?!]|GENNY|TEXTBOOK|SURELY|VERTICAL|WAGMI|INSANE|EYES|CHART/.test(text)) return "loud";
+        if (text.length > 145) return "ramble";
+        return "plain";
+      }
+
+      function buildChunks() {
+        const output = [];
+
+        sentenceRanges.forEach((range, sentenceIndex) => {
+          const sentenceWords = words.slice(range.start, range.end + 1);
+          const tone = sentenceTone(range.text);
+          let offset = 0;
+
+          while (offset < sentenceWords.length) {
+            const remaining = sentenceWords.length - offset;
+            const current = sentenceWords[offset] || "";
+            let size = tone === "loud" ? 1 : tone === "ramble" ? 3 : 2;
+
+            if (/[?!]$/.test(current) || current.length > 14) size = 1;
+            if (remaining <= 3) size = remaining;
+            size = Math.max(1, Math.min(3, size));
+
+            const chunkWords = sentenceWords.slice(offset, offset + size);
+            output.push({
+              endWord: range.start + offset + size - 1,
+              sentenceIndex,
+              startWord: range.start + offset,
+              text: chunkWords.join(" "),
+              tone
+            });
+            offset += size;
+          }
+        });
+
+        return output;
+      }
+
+      function delayForChunk(chunk) {
+        const base = chunk.tone === "loud" ? 520 : chunk.tone === "ramble" ? 740 : 620;
+        const punctuation = /[.!?]"?$/.test(chunk.text) ? 1.85 : /[,;:]$/.test(chunk.text) ? 1.28 : 1;
+        const length = chunk.text.length > 20 ? 1.18 : 1;
+        return base * punctuation * length;
       }
 
       function renderStream() {
-        const offsets = [-3, -2, -1, 0, 1, 2, 3];
-        const offsetClass = {
-          "-3": "o-neg3",
-          "-2": "o-neg2",
-          "-1": "o-neg1",
-          "0": "o-0",
-          "1": "o-pos1",
-          "2": "o-pos2",
-          "3": "o-pos3"
-        };
-        stream.innerHTML = offsets
-          .map((offset) => {
-            const wordIndex = index + offset;
-            const value = words[wordIndex] || "";
-            const active = offset === 0;
-            const near = Math.abs(offset) === 1;
-            const long = active && value.length > 12;
-            const classes = ["token", offsetClass[String(offset)], active ? "active" : "", near ? "near" : "", long ? "long" : ""].filter(Boolean).join(" ");
-            return `<span class="${classes}">${escapeHtml(value)}</span>`;
-          })
-          .join("");
+        const chunk = chunks[chunkIndex] || chunks[0];
+        const phrase = /\s/.test(chunk.text);
+        const long = chunk.text.length > 18;
+        const classes = ["token", "o-0", "active", phrase ? "phrase" : "", long ? "long" : ""].filter(Boolean).join(" ");
+        stream.innerHTML = `<span class="${classes}">${escapeHtml(chunk.text)}</span>`;
       }
 
       function renderNotes() {
-        const set = notes[Math.floor(index / 28) % notes.length];
+        const chunk = chunks[chunkIndex] || chunks[0];
+        const set = notes[Math.floor(chunk.startWord / 28) % notes.length];
         noteA.textContent = set[0];
         noteB.textContent = set[1];
         noteC.textContent = set[2];
@@ -479,53 +449,38 @@
       }
 
       function render() {
-        const value = words[index] || "HELLO?";
+        const chunk = chunks[chunkIndex] || chunks[0];
         renderStream();
         renderNotes();
-        sentence.textContent = sentenceForWord(index).text;
-        counter.textContent = `${index + 1} / ${words.length}`;
-        speedLabel.textContent = `dispatch: ${(Number(speed.value) / 1000).toFixed(1)}s`;
+        sentence.textContent = sentenceForWord(chunk.startWord).text;
       }
 
       function next() {
         if (!playing) return;
-        if (index >= words.length - 1) {
-          playing = false;
-          playButton.textContent = "REPLAY";
-          sentence.textContent = "DONE. DISGUSTING.";
-          return;
-        }
 
-        index += 1;
+        chunkIndex = (chunkIndex + 1) % chunks.length;
         render();
-        timer = window.setTimeout(next, delayForWord(words[index] || ""));
+        timer = window.setTimeout(next, delayForChunk(chunks[chunkIndex] || chunks[0]));
       }
 
       function play() {
-        if (playButton.textContent === "REPLAY") {
-          index = 0;
-          render();
-        }
-
         if (playing) return;
         playing = true;
-        playButton.textContent = "PAUSE";
-        timer = window.setTimeout(next, delayForWord(words[index] || ""));
+        timer = window.setTimeout(next, delayForChunk(chunks[chunkIndex] || chunks[0]));
       }
 
       function pause() {
         playing = false;
-        playButton.textContent = "PLAY";
         window.clearTimeout(timer);
       }
 
       function reset() {
         pause();
-        index = 0;
+        chunkIndex = 0;
         render();
       }
 
-      playButton.addEventListener("click", () => {
+      document.addEventListener("click", () => {
         if (playing) {
           pause();
         } else {
@@ -533,41 +488,31 @@
         }
       });
 
-      resetButton.addEventListener("click", reset);
-
-      speed.addEventListener("input", () => {
-        speedLabel.textContent = `dispatch: ${(Number(speed.value) / 1000).toFixed(1)}s`;
-        if (playing) {
-          window.clearTimeout(timer);
-          timer = window.setTimeout(next, delayForWord(words[index] || ""));
-        }
-      });
-
       document.addEventListener("keydown", (event) => {
         if (event.code === "Space") {
           event.preventDefault();
-          playButton.click();
+          if (playing) {
+            pause();
+          } else {
+            play();
+          }
         }
 
         if (event.key === "ArrowRight") {
           pause();
-          index = Math.min(words.length - 1, index + 1);
+          chunkIndex = Math.min(chunks.length - 1, chunkIndex + 1);
           render();
         }
 
         if (event.key === "ArrowLeft") {
           pause();
-          index = Math.max(0, index - 1);
+          chunkIndex = Math.max(0, chunkIndex - 1);
           render();
         }
       });
 
-      const tickerText = " HELLO? / GENNY / TEXTBOOK / PHONE CALCULATOR APP / DOG WITH A HAT / DAY NINETY-ONE SILENCE / ";
-      document.getElementById("tickerA").textContent = tickerText.repeat(5);
-      document.getElementById("tickerB").textContent = tickerText.repeat(5);
-
       render();
-      timer = window.setTimeout(next, 900);
+      timer = window.setTimeout(next, delayForChunk(chunks[chunkIndex] || chunks[0]));
     </script>
   </body>
 </html>
