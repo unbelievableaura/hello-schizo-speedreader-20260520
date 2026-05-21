@@ -8,6 +8,7 @@ Preview images from verification:
 
 - `preview-desktop.png`
 - `preview-mobile.png`
+- `assets/social-preview.png` is the white Times New Roman `HELLO?` social preview image.
 
 Behavior:
 
